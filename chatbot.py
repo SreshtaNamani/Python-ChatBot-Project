@@ -1,8 +1,11 @@
 while True:
     user = input("You: ").lower()
-    if "hello" in user or "hi" in user:
-        print("Bot: Hello!")
-    elif "joke" in user:
+    def greeting():
+        import random
+        greetings = ["Hello!", "Hi!", "What's up?", "Hey!"]
+        print(f"Bot: {random.choice(greetings)}")
+
+    def joke():
         print("Bot: Would You like me to tell you a joke?")
         ans1 = input("You: ").lower()
         if "yes" in ans1:
@@ -12,8 +15,16 @@ while True:
                 print("Bot: Because they are always spotted.")
         elif "no" in ans1:
             print("How could I help you?")
+
+    if "hello" in user or "hi" in user or "hey" in user:
+        greeting()
+
+    elif "joke" in user:
+        joke()    
+
     elif "bye" in user or "goodbye" in user:
         print("Bot: Bye!")
         break
+
     else:
         print("Bot: I don't understand.")
