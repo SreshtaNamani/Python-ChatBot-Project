@@ -1,4 +1,5 @@
 import random
+from datetime import datetime
 username = None
 
 def greeting():
@@ -49,6 +50,14 @@ while True:
             print(f"Your name is {username}.")
         else:
             print("Bot: I don't know your name yet.")
+
+    elif "time" in user:
+        current_time = datetime.now().strftime("%H:%M:%S")
+        print(f"Bot: The current time is {current_time}")
+
+    elif "date" in user:
+        today = datetime.now().strftime("%d-%m-%y")
+        print(f"Bot: Today's date is {today}")
 
     elif "joke" in user:
         joke()
