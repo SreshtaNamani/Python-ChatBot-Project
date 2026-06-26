@@ -51,6 +51,16 @@ while True:
         else:
             print("Bot: I don't know your name yet.")
 
+    elif "how are you" in user:
+        if username:
+            print(f"Bot: I'm good, {username}. How are you?")
+        else:
+            print("Bot: I'm good. How are you?")
+
+    elif "good" in user or "fine" in user or "okay" in user:
+        if username:
+            print(f"Good to know, {username}. What else can I do for you?")
+
     elif "time" in user:
         current_time = datetime.now().strftime("%H:%M:%S")
         print(f"Bot: The current time is {current_time}")
